@@ -1,6 +1,6 @@
 echo "enter your name::"
-read USER_NAME
+read -s USER_NAME
 echo "enter your name::"
-read PASSWORD
+read -s PASSWORD
 echo "user name is : $USER_NAME password is : $PASSWORD"
 
