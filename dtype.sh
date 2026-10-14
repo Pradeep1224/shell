@@ -9,7 +9,7 @@ x=x+10
 echo "print :$x"
 
 #array
-F=("beer" "rum" "vodka")
+=("beer" "rum" "vodka")
 echo "all: ${f[@]}"
 echo "all: ${f[0]}"
 echo "all: ${f[1]}"
