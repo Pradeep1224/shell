@@ -7,7 +7,7 @@ logs_file="${logs_folder}/${0}.log"
     exit 1
 fi
 
-mkidr -p $logs_folder
+mkdir -p $logs_folder
 echo "Script started at: $(date +"%F %T")"
 
 
