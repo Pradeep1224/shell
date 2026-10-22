@@ -13,10 +13,10 @@ echo "Script started at: $(date +"%F %T")"
 
 validate(){
     if [ $1 -ne 0 ]; then
-        echo "${2} installation failed" | tee -a $logs_file
+        echo "${2} installation FAILED" | tee -a $logs_file
         exit 1
     else
-        echo "${2} installation is sucessful" | tee -a $logs_file
+        echo "${2} installation is SUCCESS" | tee -a $logs_file
     fi
 }
 
