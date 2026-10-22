@@ -20,7 +20,7 @@ validate(){
         echo -e "${2} installation ${R}FAILE{N}D" | tee -a $logs_file
         exit 1
     else
-        echo -e "${2} installation is ${G}SUCCESS" | tee -a $logs_file
+        echo -e "${2} installation is ${G}SUCCESS${N}" | tee -a $logs_file
     fi
 }
 
@@ -29,11 +29,11 @@ do
     dnf list installed $package &>> logs_file
     if [ $? -ne 0 ];  then
     
-    echo "Going to install : ${package}"
+    echo "going to install : ${package}"
     dnf install $package -y &>> $logs_file
     validate $? "${package}"
 
     else
-     echo -e "${package} Already Installed... ${Y}SKIPP${G}ING"
+     echo -e "${package} Already Installed... ${Y}SKIPP${G}ING${N}"
     fi
 done 
