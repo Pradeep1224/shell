@@ -34,6 +34,6 @@ do
     validate $? "${package}"
 
     else
-     echo -e "${package} Already Installed... ${Y}SKIPP{G}ING"
+     echo -e "${package} Already Installed... ${Y}SKIPP${G}ING"
     fi
 done 
