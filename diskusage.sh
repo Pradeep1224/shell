@@ -8,9 +8,9 @@ do
 usage=$(echo $line | awk '{print $6}' | cut -d "%" -f1)
 partition=$(echo $line | awk '{print $7}')
 if [ "$usage" -ge "$usage_threshold" ]; then
-    message+="High disk Usage on $partition:$usage \n"
+    message+="High disk Usage on $partition:$usage <br>"
 fi
 done <<< "$disk_usage"
-echo -e "$message"
+#echo -e "$message"
 
 sh mail.sh "Devops Team" "$server_ips" "High Disk Usage" "$message" "kondaboinapradeep369@gmail.com" "High Disk Usage Alert"
