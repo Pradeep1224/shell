@@ -23,3 +23,15 @@ if [ ! -d "$source_dir" ]; then
     echo "ERROR : no such directory, $source_dir doesnot exists" 
 
 fi
+
+echo "scanning files older than $days in $source_dir"
+files_to_delete=$(find $source_dir -name "*.log" -type f -mtime $days)
+
+if [ -z "$file_to_delete"]; then 
+    echo "No files found older than $days to delete"
+    exit 0
+fi
+while IFS= read -r line
+do 
+echo "files is going to be deleted:$line" 
+done <<< "$files_to_delete"
