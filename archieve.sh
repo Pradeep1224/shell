@@ -38,7 +38,7 @@ if [ -z "$files_to_archieve" ]; then
 fi
 timestamp=$(date +%Y-%m-%d-%H-%M-%S)
 
-file_name="$dest_dir/logs-$timestamp.tasr.gz"
+file_name="$dest_dir/logs-$timestamp.tar.gz"
 
 tar -czf $file_name $files_to_archieve
 
