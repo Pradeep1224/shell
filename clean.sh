@@ -6,7 +6,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 usage(){
-    echo "${R}USAGE:: $0 [source_dir] [days(optional, default to 14 days)]${N}"
+    echo -e "${R}USAGE:: $0 [source_dir] [days(optional, default to 14 days)]${N}"
     exit 1
 }
 
