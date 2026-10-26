@@ -22,14 +22,15 @@ fi
  
  if [ ! -d "$source_dir" ]; then
      echo -e "${R}ERROR:: $source_dir does not exist${N}"
+     exit 1
  fi
 
 echo "scanning files older than $days days in $source_dir"
 
 
-files_to_delete=$(find $source_dir -name "*.log" -type f -mtime $days)
+files_to_delete=$(find $source_dir -name "*.log" -type f -mtime "$days")
 
-if [ -z "$file_to_delete"]; then 
+if [ -z "$files_to_delete"]; then 
     echo "No files found older than $days days to delete"
     exit 0
 fi
