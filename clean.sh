@@ -20,6 +20,6 @@ fi
 
 if [ ! -d "$source_dir" ]; then 
 
-    echo "ERROR : no such directory, $sourc_dir doesnot exists" 
+    echo "ERROR : no such directory, $source_dir doesnot exists" 
 
 fi
