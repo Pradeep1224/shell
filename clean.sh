@@ -1,6 +1,6 @@
 #!/bin/bash
 source_dir=$1
-days=$(2:-14)
+days=${2:-14}
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -13,7 +13,7 @@ usage(){
 
 
 if [ -z "$source_dir" ]; then
-    echo "ERROR:missinf source directory parameter"
+    echo "ERROR:missing source directory parameter"
 
     usage       
 fi 
