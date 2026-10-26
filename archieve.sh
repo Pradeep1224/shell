@@ -23,8 +23,8 @@ if [ ! -d "$source_dir" ]; then
 fi
 
 if [ ! -d "$dest_dir" ]; then 
- echo "$dest_dir doesnt exist"
- exit 1
+    echo "$dest_dir doesnt exist"
+    exit 1
 fi
 
 echo "scanning files older than $days days in $source_dir"
@@ -35,4 +35,23 @@ files_to_archieve=$(find "$source_dir" -type f -name "*.log"  -mtime +"$days")
 if [ -z "$files_to_archieve" ]; then 
     echo "No files found older than $days days to delete"
     exit 0
+fi
+timestamp=$(date +%Y-%m-%d-%H-%M-%S)
+
+file_name="$dest_dir/logs-$timestamp.tasr.gz"
+
+tar -czf $file_name $files_to_archieve
+
+if [ $? -ne 0 ]; then 
+    echo "logs archival is failed"
+
+else
+    echo "logs are archieved: $file_name"
+
+    while IFS= read -r line
+    do 
+    echo "files is going to be deleted:$line" 
+    rm -f $line
+    echo "file deleted :$line"
+    done <<< "$files_to_archieve"
 fi
