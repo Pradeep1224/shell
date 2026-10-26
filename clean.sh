@@ -30,7 +30,7 @@ echo "scanning files older than $days days in $source_dir"
 
 files_to_delete=$(find "$source_dir" -type f -name "*.log"  -mtime +"$days")
 
-if [ -z "$files_to_delete"]; then 
+if [ -z "$files_to_delete" ]; then 
     echo "No files found older than $days days to delete"
     exit 0
 fi
