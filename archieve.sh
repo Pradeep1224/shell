@@ -27,4 +27,12 @@ if [ ! -d "$dest_dir" ]; then
  exit 1
 fi
 
+echo "scanning files older than $days days in $source_dir"
 
+
+files_to_archieve=$(find "$source_dir" -type f -name "*.log"  -mtime +"$days")
+
+if [ -z "$files_to_archieve" ]; then 
+    echo "No files found older than $days days to delete"
+    exit 0
+fi
